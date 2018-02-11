@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { TOSTER_TOKEN } from './js-ext-lib-collection/toastr.service';
 declare const toastr: any;
 
 @Component({
@@ -6,14 +7,12 @@ declare const toastr: any;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit {
-  constructor() {}
+  constructor(@Inject(TOSTER_TOKEN) private Toastr: any ) {}
 
   ngOnInit() {
-    toastr.success('Helloo');
-    console.log(
-      $('body')
-    );
+    this.Toastr.success('My first Service Token');
   }
 
 }
