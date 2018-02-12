@@ -12,6 +12,9 @@ export class AppComponent implements OnInit {
   constructor(@Inject(TOSTER_TOKEN) private Toastr: any ) {}
 
   ngOnInit() {
+  }
+
+  callToastr() {
     this.Toastr.success('My first Service Token');
   }
 
