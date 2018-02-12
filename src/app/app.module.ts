@@ -1,3 +1,4 @@
+import { TOSTER_TOKEN, TOSTER_TOKEN1 } from './js-ext-lib-collection/toastr.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -5,14 +6,15 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // js-ext-lib-collection
-import { TOSTER_TOKEN } from './js-ext-lib-collection/index';
+import { Comp1Component } from './comp1/comp1.component';
 
 declare const toastr: any;
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    Comp1Component
   ],
   imports: [
     BrowserModule
@@ -21,4 +23,12 @@ declare const toastr: any;
   bootstrap: [AppComponent]
 })
 
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    if (TOSTER_TOKEN === TOSTER_TOKEN1) {
+      console.log('Both are same');
+    } else {
+      console.log('Both are different');
+    }
+  }
+}
