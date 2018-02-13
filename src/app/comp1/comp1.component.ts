@@ -20,7 +20,7 @@ export class Comp1Component implements OnInit {
   }
 
   getRootComp(rootComp) {
-    console.log(rootComp.rootProp1);
+    console.log(`From Comp1 for AppComp ${rootComp.rootProp1}`);
   }
 
 }
